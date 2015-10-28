@@ -1,0 +1,9 @@
+install wrap:mvn:redis.clients/jedis/2.2.0
+install wrap:mvn:commons-httpclient/commons-httpclient/3.1
+install mvn:org.bouncycastle/bcprov-jdk15on/1.49
+
+install mvn:nl.uva.sne.daci/token-utils/1.0.0-SNAPSHOT
+install mvn:nl.uva.sne.daci/contextsvc/1.0.0-SNAPSHOT
+install mvn:nl.uva.sne.daci/authzsvc/1.0.0-SNAPSHOT
+
+install mvn:nl.uva.sne.daci/tokensvc/1.0.0-SNAPSHOT

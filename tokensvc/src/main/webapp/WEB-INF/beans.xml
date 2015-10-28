@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd">
+
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />	
+	
+	<bean name="beanTokenSvcImpl" 
+		class="nl.uva.sne.daci.tokensvc.TokenSvcImpl" init-method="init">
+
+		<!-- Path to authnsvc configuration directory -->
+		<property name="baseDir" value="etc/tokensvc/"/>
+
+		<!-- List of trusted certificates -->
+		<property name="trustedKeyStore" value="trusted-keystore.jks"/>
+		
+		<!-- Password to access trusted keystore cert -->
+		<property name="trustedKeyStorePassword" value="trusted"/>
+
+		<!-- Keystore (.jks) of the authnsvc authority, using for signing SAML assertions -->
+		<property name="keyStore" value="tokensvc-keystore.jks"/>
+		
+		<!-- Password to access keystore -->
+		<property name="keyStorePassword" value="cloudsecurity"/>
+		
+		<!-- Key alias of the private key used for signing SAML token -->
+		<property name="keyAlias" value="tokensvc"/>
+		
+		<!-- Password to access private key -->
+		<property name="keyPassword" value="tokensvc-cloud"/>		
+	</bean>	
+	
+	<jaxrs:server id="tokensvc" address="/tokenservice">
+		<jaxrs:serviceBeans>
+			<ref bean="beanTokenSvcImpl"/>
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	  	
+</beans>

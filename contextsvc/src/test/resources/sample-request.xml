@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Request xmlns="http://sne.uva.nl/daci/1.0/schema" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#">
+	<SubjectAttributes>
+		<Attribute AttributeId="subject-id">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Tommy</AttributeValue>
+		</Attribute>
+	</SubjectAttributes>
+	
+	<PermissionAttributes>
+		<Attribute AttributeId="resource-id">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://demo3.uva.nl/vi/745/ComputingNode</AttributeValue>
+		</Attribute>
+		<Attribute AttributeId="action-id">
+			<AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SLI:Operate-VR:Stop</AttributeValue>
+		</Attribute>		
+	</PermissionAttributes>
+</Request>

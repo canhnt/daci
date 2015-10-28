@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (C) 2013 Canh T. Ngo 
+	System and Network Engineering Group, University of Amsterdam.
+	All rights reserved.
+
+	This library is free software; you can redistribute it and/or 
+	modify it under the terms of the GNU Lesser General Public 
+	License as published by the Free Software Foundation; either 
+	version 3.0 of the License, or any later version.
+
+	This library is distributed in the hope that it will be useful, 
+	but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA 02110-1301 USA
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>nl.uva.sne.daci</groupId>
+		<artifactId>daci-pom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>		
+	</parent>
+
+	<artifactId>tenantsvc</artifactId>
+	<packaging>jar</packaging>	
+	<name>Tenant Service</name>
+
+	<properties>
+		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+	</properties>
+		
+	<dependencies>
+		<dependency>
+			<groupId>nl.uva.sne</groupId>
+			<artifactId>sne-xacml</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>				
+			</plugin>			
+	        <plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>2.4</version>
+	            <configuration>
+	                <basedir>.</basedir>
+	                <header>./etc/header.txt</header>
+	                <validHeaders>
+	                    <validHeader>COPYING</validHeader>
+	                    <validHeader>http://www.gnu.org/licenses/lgpl-3.0.txt</validHeader>
+	                </validHeaders>
+	                <quiet>false</quiet>
+	                <failIfMissing>true</failIfMissing>
+	                <aggregate>false</aggregate>
+	                <includes>
+	                    <include>src/**</include>
+	                    <include>**/test/**</include>
+	                </includes>
+	                <useDefaultExcludes>true</useDefaultExcludes>
+	                <mapping>                    
+	                    <xml>XML_STYLE</xml>
+	                    <java>JAVADOC_STYLE</java>
+	                </mapping>
+	                <useDefaultMapping>true</useDefaultMapping>
+	                <encoding>UTF-8</encoding>
+			<strictCheck>true</strictCheck>
+	            </configuration>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>check</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
+
+ 		</plugins>
+	</build>
+</project>

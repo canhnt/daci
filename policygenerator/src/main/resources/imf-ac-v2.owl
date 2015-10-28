@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY imf "http://geysers.eu/imf.owl#/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xacml "urn:oasis:names:tc:xacml:2.0:resource:" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://geysers.eu/imf-daci.owl#"
+     xml:base="http://geysers.eu/imf-daci.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:imf="http://geysers.eu/imf.owl#/"
+     xmlns:xacml="urn:oasis:names:tc:xacml:2.0:resource:">
+
+    <owl:Ontology rdf:about="http://geysers.eu/imf-daci.owl">
+        <owl:imports rdf:resource="http://geysers.eu/imf.owl"/>
+    </owl:Ontology>
+    
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf-daci.owl#hasAction">
+        <rdfs:range rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf-daci.owl#hasActionId -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf-daci.owl#hasActionId">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>        
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf-daci.owl#hasActionValue -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf-daci.owl#hasActionValue">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+      
+
+
+    <!-- http://geysers.eu/imf-daci.owl#Action -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf-daci.owl#Action"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Individual -->
+
+    <owl:Class rdf:about="&owl;Individual"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- daci:MLI:Decommission-VI -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:Decommission-VI">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:Decommission-VI</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:Instantiate-VI -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:Instantiate-VI">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:Instantiate-VI</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Add-VLink -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Add-VLink">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>MLI:ReplanningVI:Add-VLink</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Add-VR-IT -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Add-VR-IT">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:ReplanningVI:Add-VR-IT</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Delete-VLink -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Delete-VLink">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:ReplanningVI:Delete-VLink</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Delete-VR-IT -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Delete-VR-IT">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:ReplanningVI:Delete-VR-IT</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Modify-Time -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Modify-Time">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>MLI:ReplanningVI:Modify-VLink</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Modify-VLink -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Modify-VLink">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>MLI:ReplanningVI:Modify-VLink</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:ReplanningVI:Modify-VR-IT -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:ReplanningVI:Modify-VR-IT">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>MLI:ReplanningVI:Modify-VR-IT</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:MLI:Request-VI -->
+
+    <owl:NamedIndividual rdf:about="daci:MLI:Request-VI">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>MLI:Request-VI</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:RP -->
+
+    <owl:NamedIndividual rdf:about="daci:RP">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ResourcePool"/>
+        <rdf:type rdf:resource="&owl;Individual"/>
+        <hasAction rdf:resource="daci:SLI:Get-Available-VR-Pool"/>
+        <hasAction rdf:resource="daci:SLI:Instantiate-VR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Add-VirtualNetworkIf -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Add-VirtualNetworkIf">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Add-VirtualNetworkIf</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Create-StorageImage -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Create-StorageImage">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Unsubscribe-VR-Monitoring</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Decommision-VR -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Decommision-VR">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Decommision-VR</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Get-Available-VR-Pool -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Get-Available-VR-Pool">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Get-Available-VR-Pool</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Instantiate-VR -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Instantiate-VR">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Instantiate-VR</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Monitor-VR-Power -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Monitor-VR-Power">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Monitor-VR-Power</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Monitor-VR-States -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Monitor-VR-States">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Monitor-VR-States</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Monitor-VR-Status -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Monitor-VR-Status">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Monitor-VR-Status</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Operate-VR:Start">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Operate-VR:Start</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Operate-VR:Stop">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Operate-VR:Stop</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Operate-VR:Pause">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Operate-VR:Pause</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Operate-VR:Restart">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Operate-VR:Restart</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+
+
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Operate-VR:Checkpoint">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Operate-VR:Checkpoint</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+
+
+    <!-- daci:SLI:Remove-StorageImage -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Remove-StorageImage">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Remove-StorageImage</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Remove-VirtualNetworkIf -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Remove-VirtualNetworkIf">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Remove-VirtualNetworkIf</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Subscribe-VR-Monitoring -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Subscribe-VR-Monitoring">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionValue>SLI:Subscribe-VR-Monitoring</hasActionValue>
+        <hasActionId>action-id</hasActionId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:SLI:Unsubscribe-VR-Monitoring -->
+
+    <owl:NamedIndividual rdf:about="daci:SLI:Unsubscribe-VR-Monitoring">
+        <rdf:type rdf:resource="http://geysers.eu/imf-daci.owl#Action"/>
+        <hasActionId>action-id</hasActionId>
+        <hasActionValue>SLI:Unsubscribe-VR-Monitoring</hasActionValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:VI -->
+
+    <owl:NamedIndividual rdf:about="daci:VI">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        <hasAction rdf:resource="daci:MLI:Decommission-VI"/>
+        <hasAction rdf:resource="daci:MLI:Instantiate-VI"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Add-VLink"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Add-VR-IT"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Delete-VLink"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Delete-VR-IT"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Modify-Time"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Modify-VLink"/>
+        <hasAction rdf:resource="daci:MLI:ReplanningVI:Modify-VR-IT"/>
+        <hasAction rdf:resource="daci:MLI:Request-VI"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- daci:VNode -->
+
+    <owl:NamedIndividual rdf:about="daci:VNode">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualNode"/>
+        <rdf:type rdf:resource="&owl;Individual"/>
+        <hasAction rdf:resource="daci:SLI:Add-VirtualNetworkIf"/>
+        <hasAction rdf:resource="daci:SLI:Remove-VirtualNetworkIf"/>
+        <hasAction rdf:resource="daci:SLI:Create-StorageImage"/>
+        <hasAction rdf:resource="daci:SLI:Remove-StorageImage"/>        
+    </owl:NamedIndividual>
+
+
+    <!-- daci:VR -->
+
+    <owl:NamedIndividual rdf:about="daci:VR">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+        <hasAction rdf:resource="daci:SLI:Decommision-VR"/>
+        <hasAction rdf:resource="daci:SLI:Monitor-VR-Power"/>
+        <hasAction rdf:resource="daci:SLI:Monitor-VR-States"/>
+        <hasAction rdf:resource="daci:SLI:Monitor-VR-Status"/>
+        <hasAction rdf:resource="daci:SLI:Operate-VR:Start"/>
+        <hasAction rdf:resource="daci:SLI:Operate-VR:Stop"/>
+        <hasAction rdf:resource="daci:SLI:Operate-VR:Restart"/>
+        <hasAction rdf:resource="daci:SLI:Operate-VR:Pause"/>
+        <hasAction rdf:resource="daci:SLI:Operate-VR:Checkpoint"/>
+        <hasAction rdf:resource="daci:SLI:Subscribe-VR-Monitoring"/>
+        <hasAction rdf:resource="daci:SLI:Unsubscribe-VR-Monitoring"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:grantTokenType xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://sne.uva.nl/daci/1.0/schema">
+	<ns2:TenantId>abc123</ns2:TenantId>
+	<ns2:Request>
+		<ns2:SubjectAttributes>
+			<ns2:Attribute AttributeId="subject-id">
+				<ns2:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Tommy</ns2:AttributeValue>
+			</ns2:Attribute>
+		</ns2:SubjectAttributes>
+		<ns2:PermissionAttributes>
+			<ns2:Attribute AttributeId="resource-id">
+				<ns2:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">http://demo3.uva.nl/vi/745/ComputingNode</ns2:AttributeValue>
+			</ns2:Attribute>
+			<ns2:Attribute AttributeId="action-id">
+				<ns2:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">SLI:Operate-VR:Stop</ns2:AttributeValue>
+			</ns2:Attribute>
+		</ns2:PermissionAttributes>
+	</ns2:Request>
+	<ns2:KeyInfo>
+		<X509Data>
+			<X509Certificate>MIIDNzCCAh+gAwIBAgIEXfovhzANBgkqhkiG9w0BAQsFADBMMQswCQYDVQQGEwJOTDEMMAoGA1UEChMDVXZBMRIwEAYDVQQLEwlTTkUgR3JvdXAxGzAZBgNVBAMTElVwcGVyTElDTC1BdXRoblN2YzAeFw0xMzAzMTIxMjE0MThaFw0xMzEyMzExMjE0MThaMEwxCzAJBgNVBAYTAk5MMQwwCgYDVQQKEwNVdkExEjAQBgNVBAsTCVNORSBHcm91cDEbMBkGA1UEAxMSVXBwZXJMSUNMLUF1dGhuU3ZjMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxg3fSK6zpjD2iQivOFt18bclbF3vNi7N1Zfi76+P5aHiHJKBaQ/xLeL8LiPd9j2W2qQ0UBPgD35t/1TJN1XyixQnN7KdaK78ZsH3bG1CLzLtTt3A/DCBAvbNDu46M2PsAWyuUc7Yn7Urq1jAgWQ5YQjln6OwdBwq17vtoUXGgTkgL3rjpMf1vwoHF34FJH8CchwgFO7En5SzGH04FoQHX0rA5xpI8EZTuzywdoxCZogdelaygvYXU+hJqWrXO7n7kZAxnf3RjBMC3K/SHPY2xlBf4c/vwW3zEdNBIE4lkLst78mSlCl1obRyhagB6hWXEdMjeKCsMHF3HFXGL2rhxwIDAQABoyEwHzAdBgNVHQ4EFgQUz0ZQmwRxlfY22fU2OMHhsQSwThMwDQYJKoZIhvcNAQELBQADggEBALszfARHCL9pyc5CLoljTi8DJe7hlbVUbut+Rwj+i8Q7KTSyocKe5/sM8pMquNxL2y0bLOCRyoHcXbuIxJj6c2v1UKa27apTd3aon0c6GX4a90c6WRTKIQrD0MRwrRARHIJnUmmegkL8QfGSZC6phTl+skUhiynXhqeMXyAx3KsjKZeeRq6Q+Y5xTXxcm4Nb8y8TO8iNqK94v0aYPmeLJdpSVenmqQfWIWm3wnU+nsbMMWpgbgV/QSlJzX5fy+ncXaKiFgJFPPa9NByYNtA3KtdRtpGTzj9PjpLxBNFao3xq2kDSCpjiaJvHB6GQ4E23Jbi3/6ZfJAy1ywb4JBIUAtw=</X509Certificate>
+		</X509Data>
+	</ns2:KeyInfo>
+</ns2:grantTokenType>

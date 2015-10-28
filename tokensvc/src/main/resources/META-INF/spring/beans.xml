@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+	xmlns:ctx="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+				http://cxf.apache.org/jaxrs
+				http://cxf.apache.org/schemas/jaxrs.xsd
+				http://www.springframework.org/schema/osgi
+				http://www.springframework.org/schema/osgi/spring-osgi.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context.xsd
+				http://www.springframework.org/schema/osgi-compendium 
+				http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
+				
+<!-- 	
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
+		
+	</bean>
+-->	
+	<bean name="tokenServiceBean" 
+		class="nl.uva.sne.daci.tokensvc.TokenSvcImpl" init-method="init">
+
+		<!-- Path to authnsvc configuration directory -->
+		<property name="baseDir" value="${BaseDir}"/>
+
+		<!-- List of trusted certificates -->
+		<property name="trustedKeyStore" value="${TrustedKeyStore}"/>
+		
+		<!-- Password to access trusted keystore cert -->
+		<property name="trustedKeyStorePassword" value="${TrustedKeyStorePassword}"/>
+
+		<!-- Keystore (.jks) of the authnsvc authority, using for signing SAML assertions -->
+		<property name="keyStore" value="${KeyStore}"/>
+		
+		<!-- Password to access keystore -->
+		<property name="keyStorePassword" value="${KeyStorePassword}"/>
+		
+		<!-- Key alias of the private key used for signing SAML token -->
+		<property name="keyAlias" value="${KeyAlias}"/>
+		
+		<!-- Password to access private key -->
+		<property name="keyPassword" value="${KeyPassword}"/>
+		
+	</bean>
+
+	
+	<osgi:service id="tokenService" ref="tokenServiceBean" interface="nl.uva.sne.daci.tokensvc.TokenSvc"/>	
+ 	
+ 	<osgix:cm-properties id="cmProps" persistent-id="nl.uva.sne.daci.tokensvc"/>             
+	<ctx:property-placeholder properties-ref="cmProps" />
+	<!-- JAX RESTFUL WEB SERVICE -->
+	
+	<jaxrs:server id="rsAuthzService" address="/tokenservice">
+		<jaxrs:serviceBeans>
+			<ref bean="restTokenServiceBean"/>
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+	
+	<bean name="restTokenServiceBean" 
+		class="nl.uva.sne.daci.tokensvc.rest.RESTTokenSvcImpl" init-method="init">
+
+		<!-- Path to authnsvc configuration directory -->
+		<property name="baseDir" value="${BaseDir}"/>
+
+		<!-- List of trusted certificates -->
+		<property name="trustedKeyStore" value="${TrustedKeyStore}"/>
+		
+		<!-- Password to access trusted keystore cert -->
+		<property name="trustedKeyStorePassword" value="${TrustedKeyStorePassword}"/>
+
+		<!-- Keystore (.jks) of the authnsvc authority, using for signing SAML assertions -->
+		<property name="keyStore" value="${KeyStore}"/>
+		
+		<!-- Password to access keystore -->
+		<property name="keyStorePassword" value="${KeyStorePassword}"/>
+		
+		<!-- Key alias of the private key used for signing SAML token -->
+		<property name="keyAlias" value="${KeyAlias}"/>
+		
+		<!-- Password to access private key -->
+		<property name="keyPassword" value="${KeyPassword}"/>
+		
+	</bean>	
+</beans>

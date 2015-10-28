@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY imf "http://geysers.eu/imf.owl#/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://geysers.eu/imf.owl#"
+     xml:base="http://geysers.eu/imf.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:imf="http://geysers.eu/imf.owl#/">
+    <owl:Ontology rdf:about="http://geysers.eu/daci/demo1">
+        <owl:imports rdf:resource="http://geysers.eu/imf.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#addWavelengths -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#addWavelengths"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#cpuArch -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#cpuArch"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#max -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#max"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#memorySize -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#memorySize"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#min -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#min"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#storageSize -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#storageSize"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#unit -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#unit"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#value -->
+
+    <owl:AnnotationProperty rdf:about="http://geysers.eu/imf.owl#value"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#addWavelengths -->
+
+    <rdf:Description rdf:about="http://geysers.eu/imf.owl#addWavelengths">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#cpuArch"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12 -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#MemoryComponent"/>
+        <memorySize rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12/MemorySize"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/13">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#MemoryComponent"/>
+        <memorySize rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/13/MemorySize"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12/MemorySize -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12/MemorySize">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <value>8192</value>
+        <unit rdf:resource="http://geysers.eu/imf.owl#MB"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/13/MemorySize">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <value>16384</value>
+        <unit rdf:resource="http://geysers.eu/imf.owl#MB"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1 -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#StorageComponent"/>
+        <storageSize rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1/StorageSize"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/2">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#StorageComponent"/>
+        <storageSize rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/2/StorageSize"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1/StorageSize -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1/StorageSize">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <value>80</value>
+        <unit rdf:resource="http://geysers.eu/imf.owl#GB"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/2/StorageSize">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <value>120</value>
+        <unit rdf:resource="http://geysers.eu/imf.owl#GB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20 -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VariableProcessingComponent"/>
+        <cores>4</cores>
+        <cpuArch>x86_64</cpuArch>
+        <processorSpeed rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20/ProcessorSpeed"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/21">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VariableProcessingComponent"/>
+        <cores>8</cores>
+        <cpuArch>x86_64</cpuArch>
+        <processorSpeed rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/21/ProcessorSpeed"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20/ProcessorSpeed -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20/ProcessorSpeed">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+        <min>1862.0</min>
+        <max>1862.0</max>
+        <unit rdf:resource="http://geysers.eu/imf.owl#MHz"/>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/21/ProcessorSpeed">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+        <min>1862.0</min>
+        <max>1862.0</max>
+        <unit rdf:resource="http://geysers.eu/imf.owl#MHz"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo3.uva.nl#IMFVirtualInfrastrucutre/8 -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFVirtualInfrastrucutre/8">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        <hasResource rdf:resource="http://demo3.uva.nl#IMFVirtualResource/vm1"/>
+        <hasResource rdf:resource="http://demo3.uva.nl#IMFVirtualResource/vm2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo3.uva.nl#IMFVirtualResource/vm1 -->
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFVirtualResource/vm1">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/12"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/1"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/20"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://demo3.uva.nl#IMFVirtualResource/vm2">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFMemoryComponent/13"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFStorageComponent/2"/>
+        <nodeComponent rdf:resource="http://demo3.uva.nl#IMFResourcePool/38/IMFVariableProcessingComponent/21"/>
+    </owl:NamedIndividual>
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

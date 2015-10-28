@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY imf "http://geysers.eu/imf.owl#/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://geysers.eu/imf.owl#"
+     xml:base="http://geysers.eu/imf.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:imf="http://geysers.eu/imf.owl#/">
+     
+    <owl:Ontology rdf:about="http://geysers.eu/daci/vi-request">
+        <owl:imports rdf:resource="http://geysers.eu/imf.owl"/>
+    </owl:Ontology>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+	<hasResource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageNode"/>
+	<hasResource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+	<hasResource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode2"/>
+	<hasResource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+	<hasResource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingNode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/StorageNode">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+	<hasNodeComponent xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageNodeComponent"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageIn"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageOut"/>
+	<hasResourceKind xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#STORAGE"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/StorageNodeComponent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#StorageComponent"/>
+	<hasStorageSize xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageSize"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/StorageSize">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">500.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#GB"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/StorageIn">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageNode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link1In">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1InCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageIn"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link1InCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1Out1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/NetworkNode1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In1"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In2"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In3"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out1"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out2"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out3"/>
+	<hasResourceKind xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#NETWORKING"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1In1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link1Out">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1OutCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In1"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageOut"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link1OutCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/StorageOut">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link1Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/StorageNode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1In2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link2In">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2InCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In2"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2Out1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link2InCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network2Out1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/NetworkNode2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2In1"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2In2"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2Out1"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2Out2"/>
+	<hasResourceKind xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#NETWORKING"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network2In1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link2Out">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2OutCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2In1"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link2OutCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1Out2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link2Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network2In2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link4In">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4InCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2In2"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link4InCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3Out2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/NetworkNode3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In1"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In2"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In3"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out1"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out2"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out3"/>
+	<hasResourceKind xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#NETWORKING"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3In1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link3Out">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3OutCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In1"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1Out3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link3OutCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1Out3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3In2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link4Out">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4OutCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In2"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network2Out2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link4OutCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network2Out2">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link4Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3In3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link5In">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5InCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3In3"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingOut"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link5InCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/ComputingOut">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingNode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/ComputingNode">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+	<hasNodeComponent xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ProcessingComponent"/>
+	<hasNodeComponent xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/MemoryComponent"/>
+	<hasInboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingIn"/>
+	<hasOutboundInterface xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingOut"/>
+	<hasResourceKind xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#COMPUTING"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/ProcessingComponent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ProcessingComponent"/>
+	<hasProcessorSpeed xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/CPUSpeed"/>
+	<hasCores xmlns="http://geysers.eu/imf.owl#">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/CPUSpeed">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">2.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#GHz"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/MemoryComponent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#MemoryComponent"/>
+	<hasMemorySize xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/MemorySize"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/MemorySize">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">1.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#GB"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/ComputingIn">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingNode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link5Out">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5OutCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/ComputingIn"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link5OutCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3Out3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link5Out"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network3Out1">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link3In">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Link"/>
+	<hasCapacity xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3InCapacity"/>
+	<hasSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network1In3"/>
+	<hasSource xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Network3Out1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Link3InCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+	<hasValue xmlns="http://geysers.eu/imf.owl#">100.0</hasValue>
+	<hasUnit xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://geysers.eu/imf.owl#Mbit_s"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://demo3.uva.nl/vi/1/Network1In3">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Individual"/>
+	<rdf:type rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+	<hasIsSink xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/Link3In"/>
+	<hasNode xmlns="http://geysers.eu/imf.owl#" rdf:resource="http://demo3.uva.nl/vi/1/NetworkNode1"/>
+</rdf:Description>
+
+</rdf:RDF>

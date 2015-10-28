@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://geysers.eu/imf.owl" uri="file:/home/canhnt/Dropbox/doc/UvA/prjs-shared/IJIS2012-revised/doc/imf.owl"/>
+    <uri id="Imports Wizard Entry" name="http://geysers.eu/imf.owl" uri="http://geysers.eu/imf.owl#"/>
+    <uri id="Imports Wizard Entry" name="http://geysers.eu/imf.owl" uri="file:/home/canhnt/Dropbox/doc/UvA/prjs-shared/IJIS2012-revised/doc/imf.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf-daci.owl" uri="imf-ac-policy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf-daci.owl" uri="imf-ac.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf-daci.owl" uri="imf-ac-v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf.owl" uri="vi-request.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf.owl" uri="vi-sample100.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf.owl" uri="vi-sample1.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf.owl" uri="vi-sample1k.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="duplicate:http://geysers.eu/imf.owl" uri="imf.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1383043945791" name="shadowed:http://geysers.eu/imf.owl" uri="tmp/vi-sample100.xml"/>
+    </group>
+</catalog>

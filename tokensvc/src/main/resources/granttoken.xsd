@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://sne.uva.nl/daci/1.0/schema" 
+	xmlns:daci="http://sne.uva.nl/daci/1.0/schema"
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+	elementFormDefault="qualified">
+
+	<xs:import schemaLocation="xmldsig-core-schema.xsd" namespace="http://www.w3.org/2000/09/xmldsig#"/> 
+
+	<xs:element name="GrantToken" type="daci:GrantTokenType"/>
+	<xs:complexType name="GrantTokenType">
+		<xs:sequence>
+			<!-- Identifier of the tenant(cloud provider) who issues the grant-token -->
+			<xs:element ref="daci:TenantId" minOccurs="1"  maxOccurs="1"/>
+
+			<!-- Request containing attributes needs to be authorized -->
+			<xs:element ref="daci:Request" minOccurs="1"  maxOccurs="1"/>
+
+			<!-- Grant token lifetime -->
+			<xs:element ref="daci:Condition" minOccurs="0"/>			
+			
+			<!-- Public key of the user/app/consumer that sends the grant-token to the remote provider-->
+			<xs:element ref="daci:KeyInfo" minOccurs="0"/>
+
+			<!-- Signature of the cloud provider that issues this grant token -->
+			<xs:element ref="daci:Signature" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+
+	<xs:element name="TenantId" type="xs:string"/>
+	<xs:element name="Request" type="daci:RequestType"/>
+	<xs:complexType name="RequestType">
+		<xs:sequence>
+			<xs:element ref="daci:SubjectAttributes" minOccurs="1"  maxOccurs="1"/>
+			<xs:element ref="daci:PermissionAttributes" minOccurs="1"  maxOccurs="1"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="KeyInfo" type="ds:KeyInfoType"/>
+	<xs:element name="Signature" type="ds:SignatureType"/>
+
+	<xs:element name="Condition" type="daci:ConditionType"/> 
+	<xs:complexType name="ConditionType">
+		<xs:attribute name="NotBefore" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="NotOnOrAfter" type="xs:dateTime" use="optional"/>
+	</xs:complexType>
+
+ 	<xs:element name="SubjectAttributes" type="daci:AttributesType"/>
+ 	<xs:element name="PermissionAttributes" type="daci:AttributesType"/>
+ 	<xs:complexType name="AttributesType">
+ 		<xs:sequence>
+ 			<xs:element ref="daci:Attribute" minOccurs="0" maxOccurs="unbounded"/>
+ 		</xs:sequence>
+ 	</xs:complexType>
+
+	<xs:element name="Attribute" type="daci:AttributeType"/> 
+	<xs:complexType name="AttributeType">
+		<xs:sequence>
+			<xs:element ref="daci:AttributeValue" minOccurs="1"  maxOccurs="1"/>
+		</xs:sequence>		
+		<xs:attribute name="AttributeId" type="xs:anyURI" use="required"/>
+	</xs:complexType>
+
+	<xs:element name="AttributeValue" type="daci:AttributeValueType"/> 
+	<xs:complexType name="AttributeValueType">
+		 <xs:simpleContent>
+		 	<xs:extension base="xs:string">
+		 		<xs:attribute name="DataType" type="xs:anyURI" use="required"/>		
+		 	</xs:extension>
+		 </xs:simpleContent>		
+	</xs:complexType>	
+</xs:schema>

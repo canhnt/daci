@@ -1,0 +1,3180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY kbit "http://geysers.eu/imf.owl#kbit/" >
+    <!ENTITY Mbit "http://geysers.eu/imf.owl#Mbit/" >
+    <!ENTITY Gbit "http://geysers.eu/imf.owl#Gbit/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xacml "urn:oasis:names:tc:xacml:2.0:resource:" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<rdf:RDF xmlns="http://geysers.eu/imf.owl#" xml:base="http://geysers.eu/imf.owl" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:Mbit="http://geysers.eu/imf.owl#Mbit/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:kbit="http://geysers.eu/imf.owl#kbit/" xmlns:xacml="urn:oasis:names:tc:xacml:2.0:resource:" xmlns:Gbit="http://geysers.eu/imf.owl#Gbit/">
+    <owl:Ontology rdf:about="http://geysers.eu/imf.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#ID -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#ID"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#activate -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#activate">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Timeline"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#actorRelation -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#actorRelation">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <owl:inverseOf rdf:resource="http://geysers.eu/imf.owl#nodeRelation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Domain"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#administers -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#administers">
+        <owl:inverseOf rdf:resource="http://geysers.eu/imf.owl#hasAdministrator"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#nodeRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#administrativeStatus -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#administrativeStatus">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#AdministrativeStatus"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#alarmStatus -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#alarmStatus">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#AlarmStatus"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#availableSize -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#availableSize">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MemoryStatus"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#StorageStatus"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#averageConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#averageConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#belongsTo">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#capacity -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#capacity">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#NetworkElement"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#SwitchingComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#castType -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#castType">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#CastType"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#SwitchingComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#channelSpacing -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#channelSpacing">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacing"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#DWDMConfig"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#connectedTo">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#consumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#consumption">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#EnergyConsumption"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#cost -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#cost">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#MonetaryCosts"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#currentConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#currentConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#currentLoad -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#currentLoad">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ProcessorStatus"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#currentOpticalPower -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#currentOpticalPower">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalElementStatus"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#currentPowerConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#currentPowerConsumption">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#DeviceStatus"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#diskImage -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#diskImage">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#DiskImage"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#dwdmConfig -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#dwdmConfig">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#DWDMConfig"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#fiberType -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#fiberType">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#FiberType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Link"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#granularity -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#granularity">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceCapability"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#gridType -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#gridType">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#DWDMConfig"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#DWDMGridType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasAdministrator -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasAdministrator">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#actorRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasCredential -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasCredential">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Credential"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasOperator -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasOperator">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#actorRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasOwner -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasOwner">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#actorRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasResource">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasRole">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ActorRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasSink -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasSink">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Link"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#XConnect"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hasSource">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Link"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#XConnect"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#hypervisor -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#hypervisor">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Hypervisor"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#LogicalResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#idleConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#idleConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#imageType -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#imageType">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#DiskImage"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#DiskImageType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#implementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#implementedBy">
+        <owl:inverseOf rdf:resource="http://geysers.eu/imf.owl#implements"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualNode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#implements -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#implements">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Node"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#VirtualNode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#inboundInterface -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#inboundInterface">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Domain"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#inputPower -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#inputPower">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#insertionLoss -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#insertionLoss">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#isSink -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#isSink">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Link"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#isSource -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#isSource">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Link"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#latency -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#latency">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Latency"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#layer -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#layer">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Layer"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Link"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#location -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#location">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#NodeComponent"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Timeline"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#maxConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#maxConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#memorySize -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#memorySize">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#MemoryComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#nodeComponent -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#nodeComponent">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Node"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#nodeRelation -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#nodeRelation">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Domain"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#oneWayTime -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#oneWayTime">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#latency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#operates -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#operates">
+        <owl:inverseOf rdf:resource="http://geysers.eu/imf.owl#hasOperator"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#nodeRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#operationalStatus -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#operationalStatus">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#OperationalStatus"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#outboundInterface -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#outboundInterface">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Domain"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#outputPower -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#outputPower">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#owns -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#owns">
+        <owl:inverseOf rdf:resource="http://geysers.eu/imf.owl#hasOwner"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#nodeRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#plImpairment -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#plImpairment">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Impairment"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Link"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#powerClass -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#powerClass">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#PowerClass"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#PowerElement"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#powerSource -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#powerSource">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#PowerElement"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#PowerSource"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#processorSpeed -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#processorSpeed">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ProcessingComponent"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VariableProcessingComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#RangeUnitPair"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ValueUnitPair"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#qosElement -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#qosElement">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#NodeComponent"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#qosProperty -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#qosProperty"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#reservation -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#reservation">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Timeline"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#resourceKind -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#resourceKind">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ResourceKind"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceCapability"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#responseTime -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#responseTime">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#timing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#returnLoss -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#returnLoss">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#roundTripTime -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#roundTripTime">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#latency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#sleepConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#sleepConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#status -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#status">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#storageSize -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#storageSize">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#StorageComponent"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#subscriptionCost -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#subscriptionCost">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#swappingCapability -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#swappingCapability">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Layer"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#SwitchingComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#switchedTo -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#switchedTo">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Interface"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#XConnect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#switchingCapability -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#switchingCapability">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Layer"/>
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#SwitchingComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#timeToPowerUp -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#timeToPowerUp">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#timing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#timeToSleep -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#timeToSleep">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#timing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#timeToWakeUp -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#timeToWakeUp">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#timing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#timetoShutdown -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#timetoShutdown">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#timing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#timing -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#timing">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Timing"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#qosProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#unit -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#unit">
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#Constant"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#RangeUnitPair"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ValueUnitPair"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#usageCost -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#usageCost">
+        <rdfs:subPropertyOf rdf:resource="http://geysers.eu/imf.owl#cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#viStatus -->
+
+    <owl:ObjectProperty rdf:about="http://geysers.eu/imf.owl#viStatus">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        <rdfs:range rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructureStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#IPv4address -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#IPv4address">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#IPv6address -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#IPv6address">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#addWavelengths -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#addWavelengths">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ROADMComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#address">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#bypassWavelengths -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#bypassWavelengths">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ROADMComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#channelNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#channelNumber">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#DWDMConfig"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#city -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#city">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#configurationTime -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#configurationTime">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#continent -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#continent">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#cores -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#cores">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#AbstractProcessingComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#country -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#country">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#cpuArch -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#cpuArch">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#AbstractProcessingComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#description -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#DiskImage"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Interface"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#dropWavelengths -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#dropWavelengths">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ROADMComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#environmentalConstraint -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#environmentalConstraint">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#facility -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#facility">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#geo84coordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#geo84coordinates">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#max -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#max">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#long"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#min -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#min">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#RangeUnitPair"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#long"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#namespace -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#namespace">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#numberOfFibers -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#numberOfFibers">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OXCComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#osType -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#osType">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#osVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#osVersion">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OperatingSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#owner -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#owner">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#panel -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#panel">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#password -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#password">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#UserPasswordCredential"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#rack -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#rack">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#room -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#room">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#scaleDown -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#scaleDown">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#scaleUp -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#scaleUp">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#self -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#self">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Actor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#startDate">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Timeline"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#token -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#token">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#TokenCredential"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#totalTime -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#totalTime">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Timeline"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#uri -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#uri">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Actor"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#username -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#username">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#UserPasswordCredential"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#value -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#value">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#ValueUnitPair"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#long"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#vmImage -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#vmImage">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#vmiRepository -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#vmiRepository">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#volatile -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#volatile">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#StorageComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#wavelengthsPerFiber -->
+
+    <owl:DatatypeProperty rdf:about="http://geysers.eu/imf.owl#wavelengthsPerFiber">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#OXCComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- urn:oasis:names:tc:xacml:2.0:resource:resource-id -->
+
+    <owl:DatatypeProperty rdf:about="urn:oasis:names:tc:xacml:2.0:resource:resource-id">
+        <rdfs:domain rdf:resource="http://geysers.eu/imf.owl#Node"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#ID"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AbstractProcessingComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#AbstractProcessingComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Actor -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Actor"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ActorRole -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ActorRole">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VIO"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#PIP"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VIP"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ActorRoleValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ActorRoleValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AdminStatusValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#AdminStatusValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AdministrativeStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#AdministrativeStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#NotProvisioned"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#AdmInService"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#AdmOutOfService"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#UnderManagement"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AlarmStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#AlarmStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MinorAlarm"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#CriticalAlarm"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#NoAlarm"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MajorAlarm"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AlarmStatus"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AlarmStatusValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#AlarmStatusValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#BandwidthUnit -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#BandwidthUnit">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Mbit/s"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Gbit/s"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kbit/s"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CastType -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#CastType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Broadcast"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Multicast"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Unicast"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CastTypeValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#CastTypeValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Constant -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Constant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Mbit/s"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#dB"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#dBm"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#GB"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Gbit/s"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kWh"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MW"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Hz"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#GW"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#EURO"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MB"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MINUTES"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#B"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#GWh"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MHz"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#HOURS"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kHz"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#DOLLAR"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kW"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#W"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#SECONDS"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Wh"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#TB"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#GHz"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kB"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MWh"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#kbit/s"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ConstantValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ConstantValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Credential -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Credential"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CurrentStateValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#CurrentStateValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DWDMChannelSpacing -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DWDMChannelSpacing">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#HUNDRED"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#TWENTYFIVE"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#TWELVE_AND_A_HALF"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#RESERVED"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#FIFTY"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DWDMChannelSpacingValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DWDMChannelSpacingValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DWDMConfig -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DWDMConfig"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DWDMGridType -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DWDMGridType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#RESERVED"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ITU_T_DWDM"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ITU_T_CWDM"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DWDMGridTypeValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DWDMGridTypeValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DeviceStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DeviceStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DiskImage -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DiskImage">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DiskImageType -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DiskImageType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OS"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#DISK"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#DATABLOCK"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#CDROM"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DiskImageTypeValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#DiskImageTypeValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Domain -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Domain"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#EnergyConsumption -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#EnergyConsumption">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Enumerable -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Enumerable"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#EnumerableValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#EnumerableValue"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#FiberType -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#FiberType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#MultiMode"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#SingleMode"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#FiberTypeValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#FiberTypeValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Hypervisor -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Hypervisor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Xen"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VMware"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#KVM"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#XenServer"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#VMware_ESXi"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#HyperV"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#HypervisorValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#HypervisorValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Impairment -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Impairment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#PMD"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#CD"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#PDL"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Crosstalk"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ImpairmentValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ImpairmentValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Interface -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Interface">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NetworkElement"/>
+        <owl:disjointWith rdf:resource="http://geysers.eu/imf.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Latency -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Latency">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Layer -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Layer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Wavelength"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Ethernet"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Fiber"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#LayerValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#LayerValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Link -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Link">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Location -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Location"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#LogicalResource -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#LogicalResource">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#VirtualNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MappingTable -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#MappingTable">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MemoryComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#MemoryComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MemoryStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#MemoryStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MonetaryCosts -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#MonetaryCosts">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#NetworkElement -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#NetworkElement">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Node -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Node">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#NodeComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#NodeComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OXCComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OXCComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+        <owl:disjointWith rdf:resource="http://geysers.eu/imf.owl#ROADMComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OperatingSystem">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OperationalStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OperationalStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OpInService"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Failure"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Initializing"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Ready"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OpOutOfService"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OperationalStatusValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OperationalStatusValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OpticalElementStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OpticalElementStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OpticalSwitchingComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#OpticalSwitchingComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#SwitchingComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PowerClass -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#PowerClass">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#A"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#B"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#C"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#D"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PowerClassValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#PowerClassValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PowerElement -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#PowerElement">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PowerSource -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#PowerSource">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Battery"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ElectricalNet"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Fuel"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Solar"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PowerSourceValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#PowerSourceValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ProcessingComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ProcessingComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#AbstractProcessingComponent"/>
+        <owl:disjointWith rdf:resource="http://geysers.eu/imf.owl#VariableProcessingComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ProcessorStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ProcessorStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#QoSElement -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#QoSElement"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ROADMComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ROADMComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#OpticalSwitchingComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#RangeUnitPair -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#RangeUnitPair"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Resource -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Resource"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ResourceCapability -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ResourceCapability"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ResourceKind -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ResourceKind">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#OXC"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#ComputingElement"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#StorageComponent"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ResourceKindValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ResourceKindValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ResourcePool -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ResourcePool">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#VirtualNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ResourceStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ResourceStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#StateElement -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#StateElement"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#StorageComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#StorageComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#StorageStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#StorageStatus">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#ResourceStatus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#SwitchingComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#SwitchingComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Timeline -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Timeline"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Timing -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#Timing">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#QoSElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#TokenCredential -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#TokenCredential">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Credential"/>
+        <owl:disjointWith rdf:resource="http://geysers.eu/imf.owl#UserPasswordCredential"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#UserPasswordCredential -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#UserPasswordCredential">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Credential"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ValueUnitPair -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#ValueUnitPair"/>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VariableProcessingComponent -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VariableProcessingComponent">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#AbstractProcessingComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VirtualInfrastructure -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VirtualInfrastructureStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructureStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Requested"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Deploying"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Operative"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Scheduled"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VirtualInfrastructureStatusType -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VirtualNode -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VirtualNode">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VirtualResource -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#VirtualResource">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#VirtualNode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#XCStatus -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#XCStatus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Deleted"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Failed"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Working"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Creation"/>
+                    <rdf:Description rdf:about="http://geysers.eu/imf.owl#Deletion"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#Enumerable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#XCStatusValue -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#XCStatusValue">
+        <rdfs:subClassOf rdf:resource="http://geysers.eu/imf.owl#EnumerableValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#XConnect -->
+
+    <owl:Class rdf:about="http://geysers.eu/imf.owl#XConnect"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://geysers.eu/imf.owl#A -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#A">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerClassValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AdmInService -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#AdmInService">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AdminStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#AdmOutOfService -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#AdmOutOfService">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AdminStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#B -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#B">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerClassValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Battery -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Battery">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerSourceValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Broadcast -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Broadcast">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CastTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#C -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#C">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerClassValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CD -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#CD">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ImpairmentValue"/>
+        <rdfs:comment>Chromatic disperion</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CDROM -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#CDROM">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DiskImageTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ComputingElement -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#ComputingElement">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ResourceKindValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Creation -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Creation">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#XCStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#CriticalAlarm -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#CriticalAlarm">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AlarmStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Crosstalk -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Crosstalk">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ImpairmentValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#D -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#D">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerClassValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DATABLOCK -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#DATABLOCK">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DiskImageTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DISK -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#DISK">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DiskImageTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#DOLLAR -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#DOLLAR">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Deleted -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Deleted">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#XCStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Deletion -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Deletion">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#XCStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Deploying -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Deploying">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#EURO -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#EURO">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ElectricalNet -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#ElectricalNet">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerSourceValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Ethernet -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Ethernet">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#LayerValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#FIFTY -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#FIFTY">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Failed -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Failed">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#XCStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Failure -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Failure">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Fiber -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Fiber">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#LayerValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Fuel -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Fuel">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerSourceValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#GB -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#GB">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#GHz -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#GHz">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#GW -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#GW">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#GWh -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#GWh">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Gbit/s -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Gbit/s">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#HOURS -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#HOURS">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#HUNDRED -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#HUNDRED">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#HyperV -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#HyperV">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Hz -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Hz">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ITU_T_CWDM -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#ITU_T_CWDM">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMGridTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#ITU_T_DWDM -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#ITU_T_DWDM">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMGridTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Idle -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Idle">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CurrentStateValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Initializing -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Initializing">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#KVM -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#KVM">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MB -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MB">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MHz -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MHz">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MINUTES -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MINUTES">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MW -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MW">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MWh -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MWh">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MajorAlarm -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MajorAlarm">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AlarmStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Mbit/s -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Mbit/s">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MinorAlarm -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MinorAlarm">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AlarmStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#MultiMode -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#MultiMode">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#FiberTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Multicast -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Multicast">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CastTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#NoAlarm -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#NoAlarm">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AlarmStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#NotProvisioned -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#NotProvisioned">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AdminStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OS -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#OS">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DiskImageTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OXC -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#OXC">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ResourceKindValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Off -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Off">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CurrentStateValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OpInService -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#OpInService">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#OpOutOfService -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#OpOutOfService">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Operative -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Operative">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PDL -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#PDL">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ImpairmentValue"/>
+        <rdfs:comment>Polarization-dependent loss</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PIP -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#PIP">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ActorRoleValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#PMD -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#PMD">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ImpairmentValue"/>
+        <rdfs:comment>Polarization-mode dispersion</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#RESERVED -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#RESERVED">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMGridTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Ready -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Ready">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Requested -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Requested">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#SECONDS -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#SECONDS">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Scheduled -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Scheduled">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#SingleMode -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#SingleMode">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#FiberTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Sleep -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Sleep">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CurrentStateValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Solar -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Solar">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#PowerSourceValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#StorageComponent -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#StorageComponent">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ResourceKindValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#TB -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#TB">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#TWELVE_AND_A_HALF -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#TWELVE_AND_A_HALF">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#TWENTYFIVE -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#TWENTYFIVE">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#UnderManagement -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#UnderManagement">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#AdminStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Unicast -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Unicast">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CastTypeValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VIO -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#VIO">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ActorRoleValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VIP -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#VIP">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ActorRoleValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VMware -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#VMware">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#VMware_ESXi -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#VMware_ESXi">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#W -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#W">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Wavelength -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Wavelength">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#LayerValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Wh -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Wh">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Working -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Working">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#CurrentStateValue"/>
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#XCStatusValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#Xen -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#Xen">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#XenServer -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#XenServer">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#HypervisorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#dB -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#dB">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#dBm -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#dBm">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#kB -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#kB">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#kHz -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#kHz">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#kW -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#kW">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#kWh -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#kWh">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://geysers.eu/imf.owl#kbit/s -->
+
+    <owl:NamedIndividual rdf:about="http://geysers.eu/imf.owl#kbit/s">
+        <rdf:type rdf:resource="http://geysers.eu/imf.owl#ConstantValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ActorRoleValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AdminStatusValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AlarmStatusValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#CastTypeValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ConstantValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#CurrentStateValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DWDMChannelSpacingValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DWDMGridTypeValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DiskImageTypeValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#FiberTypeValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#HypervisorValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ImpairmentValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#LayerValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#OperationalStatusValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#PowerClassValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#PowerSourceValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceKindValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructureStatusType"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#XCStatusValue"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#EnergyConsumption"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Latency"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#MonetaryCosts"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#PowerElement"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Timing"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ActorRole"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AdministrativeStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AlarmStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#BandwidthUnit"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#CastType"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Constant"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DWDMChannelSpacing"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DWDMGridType"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DiskImageType"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#FiberType"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Hypervisor"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Impairment"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Layer"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#OperationalStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#PowerClass"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#PowerSource"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceKind"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructureStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#XCStatus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#LogicalResource"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourcePool"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualResource"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Actor"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Credential"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DWDMConfig"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Domain"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Enumerable"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#EnumerableValue"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Location"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#QoSElement"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#RangeUnitPair"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Resource"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceCapability"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ResourceStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#StateElement"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Timeline"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ValueUnitPair"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#XConnect"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DiskImage"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#NetworkElement"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#Node"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#NodeComponent"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#VirtualInfrastructure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#AbstractProcessingComponent"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#MappingTable"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#MemoryComponent"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#OperatingSystem"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#StorageComponent"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#SwitchingComponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#DeviceStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#MemoryStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#OpticalElementStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#ProcessorStatus"/>
+            <rdf:Description rdf:about="http://geysers.eu/imf.owl#StorageStatus"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
