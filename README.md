@@ -1,2 +1,3 @@
-Dynamic Access Control Infrastructure for Multi-tenant Cloud Infrastructure Systems
-====
+Dynamic Access Control Infrastructure
+=====
+
