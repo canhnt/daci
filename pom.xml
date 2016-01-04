@@ -39,6 +39,7 @@
 	</licenses>
 
 	<properties>
+		<sne-xacml.version>0.0.3</sne-xacml.version>
 		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
 		<cxf.version>2.4.2</cxf.version>
 		<jedis.version>2.2.0</jedis.version>		
@@ -83,11 +84,12 @@
 		</pluginRepository>		
 	</pluginRepositories>	
 
-	<dependencies>
+	<dependencyManagement>
+		<dependencies>
 		<dependency>
 			<groupId>nl.uva.sne</groupId>
 			<artifactId>sne-xacml</artifactId>
-			<version>0.0.1</version>
+			<version>${sne-xacml.version}</version>
 		</dependency>
 
 		<dependency>
@@ -124,6 +126,8 @@
 			<scope>test</scope>
 		</dependency>		
 	</dependencies>
+	</dependencyManagement>
+	
 
 	<build>
 		<pluginManagement>
