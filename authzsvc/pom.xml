@@ -41,18 +41,18 @@
 		<dependency>
 			<groupId>nl.uva.sne.daci</groupId>
 			<artifactId>contextsvc</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${daci.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>nl.uva.sne</groupId>
-			<artifactId>sne-xacml</artifactId>
-			<version>0.0.1</version>
+			<artifactId>sne-xacml-core</artifactId>			
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>eu.geysers.licl</groupId>			
 			<artifactId>eu.geysers.licl.imf.createsvc</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${geysers.version}</version>
 		</dependency>
 
 <!-- 		<dependency>

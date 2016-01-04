@@ -35,13 +35,13 @@
 		<dependency>
 			<groupId>nl.uva.sne.daci</groupId>
 			<artifactId>authzsvc</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${daci.version}</version>
 		</dependency>
 			
 		<dependency>
 			<groupId>nl.uva.sne.daci</groupId>
 			<artifactId>contextsvc</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${daci.version}</version>
 		</dependency>
 	</dependencies>
 	

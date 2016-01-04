@@ -10,7 +10,7 @@ import nl.uva.sne.midd.Decision;
 import nl.uva.sne.midd.DecisionType;
 import nl.uva.sne.midd.Variable;
 import nl.uva.sne.midd.nodes.InternalNode;
-import nl.uva.sne.midd.utils.EvaluationUtil;
+import nl.uva.sne.midd.util.EvaluationUtils;
 import nl.uva.sne.xacml.AttributeMapper;
 import nl.uva.sne.xacml.policy.parsers.MIDDParsingException;
 import nl.uva.sne.xacml.policy.parsers.XACMLParsingException;
@@ -41,7 +41,7 @@ public class ContextImpl implements Context {
 		
 		Map<Integer, Variable<?>> variables = convertRequest(request);
 		
-		Decision result = EvaluationUtil.eval(this.criteria, variables);
+		Decision result = EvaluationUtils.eval(this.criteria, variables);
 		
 		return result.getDecision() == DecisionType.Permit;
 			

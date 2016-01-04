@@ -39,8 +39,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>nl.uva.sne</groupId>
-			<artifactId>sne-xacml</artifactId>
-			<version>0.0.1</version>
+			<artifactId>sne-xacml-core</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	

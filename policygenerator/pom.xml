@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>eu.geysers.licl</groupId>
 			<artifactId>eu.geysers.licl.imf.createsvc</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>${geysers.version}</version>
 		</dependency>
 	</dependencies>
 
